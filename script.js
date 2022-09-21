@@ -21,10 +21,6 @@ function pokeGen() {
 
         pokeA = await getData(userIncPoke);
         pokeB = await getData(userDonAmt - userIncPoke);
-        // pokeA = await getData(getRandomIntInclusive(dexMin, dexMax));
-        // pokeB = await getData(getRandomIntInclusive(dexMin, dexMax));
-        // console.log(pokeA);
-        // pokeB = await getData(905 - pokeA.id);
 
         document.getElementsByClassName('poke_one_info')[0].innerHTML = "#" + pokeA.id + " " + pokeA.name;
         document.getElementsByClassName('poke_one_sprite')[0].innerHTML = '<img src="' + pokeA.sprites.front_default + '" />';
