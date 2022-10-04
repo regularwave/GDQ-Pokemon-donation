@@ -41,6 +41,11 @@ body {
     text-transform: capitalize;
 }
 
+footer {
+    text-align: center;
+    color: white;
+}
+
 @media screen and (max-width: 768px) {
     .container {
         width: 100%;
