@@ -10,11 +10,11 @@ body {
     color: white;
 }
 
-.container {
+#container {
     width: 50%;
 }
 
-.container>div {
+#container>div {
     background: #3B4665;
     text-align: center;
     text-shadow: 1px 1px 1px #000000;
@@ -43,11 +43,16 @@ body {
 
 footer {
     text-align: center;
+    font-size: .7rem;
+    color: white;
+}
+
+a {
     color: white;
 }
 
 @media screen and (max-width: 768px) {
-    .container {
+    #container {
         width: 100%;
     }
 }
