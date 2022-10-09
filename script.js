@@ -1,3 +1,6 @@
+const visCount = document.getElementById('visCount');
+updateSiteCounter();
+
 function pokeGen() {
     (async () => {
         let pokeA;
@@ -28,4 +31,12 @@ function pokeGen() {
         document.getElementsByClassName('poke_two_sprite')[0].innerHTML = '<img src="' + pokeB.sprites.front_default + '" />';
         document.getElementsByClassName('total_donation')[0].innerHTML = "Donation amount: $" + (pokeA.id + pokeB.id) + "!";
     })();
+}
+
+function updateSiteCounter() {
+    fetch('https://api.countapi.xyz/hit/regularwave_GDQ-Pokemon-donation')
+        .then(response => response.json())
+        .then(response => {
+            visCount.innerHTML = response.value;
+        })
 }
