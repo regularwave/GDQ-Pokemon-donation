@@ -1,12 +1,7 @@
-const visCount = document.getElementById('visCount');
-updateSiteCounter();
-
 function pokeGen() {
     (async () => {
         let pokeA;
         let pokeB;
-        let dexMin = 1;
-        let dexMax = 905;
         var userDonAmt = document.getElementById("num_don_amt").value;
         var userIncPoke = document.getElementById("num_inc_poke").value;
 
@@ -15,12 +10,6 @@ function pokeGen() {
             const data = await response.json();
             return data;
         };
-
-        function getRandomIntInclusive(min, max) {
-            min = Math.ceil(min);
-            max = Math.floor(max);
-            return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
-        }
 
         pokeA = await getData(userIncPoke);
         pokeB = await getData(userDonAmt - userIncPoke);
@@ -31,12 +20,4 @@ function pokeGen() {
         document.getElementsByClassName('poke_two_sprite')[0].innerHTML = '<img src="' + pokeB.sprites.front_default + '" />';
         document.getElementsByClassName('total_donation')[0].innerHTML = "Donation amount: $" + (pokeA.id + pokeB.id) + "!";
     })();
-}
-
-function updateSiteCounter() {
-    fetch('https://api.countapi.xyz/hit/regularwave_GDQ-Pokemon-donation')
-        .then(response => response.json())
-        .then(response => {
-            visCount.innerHTML = response.value;
-        })
 }
